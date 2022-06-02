@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
+from LearningMongo import urls as LearningMongoUrls;
 
 def index(request):
     return HttpResponse('Learn Python with ease')
@@ -24,4 +25,5 @@ urlpatterns = [
     path('', index),
     path('admin/', admin.site.urls),
     path('', include('playground.urls')),
+    path('mongo/', include(LearningMongoUrls)),
 ]
